@@ -495,8 +495,8 @@ export const SettingsManager = {
             }
 
             if (prefs.customInstructionFile) {
-                // No-op while the select is still empty; the
-                // 'customInstructionsLoaded' listener applies it later.
+                // The select has built-in options before custom instructions load,
+                // so keep this selection pending until the loaded event fires.
                 window.__pendingCustomInstructionSelection = prefs.customInstructionFile;
                 this.applyPendingCustomInstructionSelection();
             }
